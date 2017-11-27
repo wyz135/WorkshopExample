@@ -1,6 +1,3 @@
-[run]
-source=some_module
-
 [report]
 omit =
     doc/*
