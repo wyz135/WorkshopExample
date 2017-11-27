@@ -11,7 +11,7 @@ install:
   - pip install pytest pytest-cov sphinx numpydoc codecov sphinx_rtd_theme
 
 script:
-  - pytest --cov=./
+  - pytest --cov=./ -v
 
 after_success:
   - codecov
