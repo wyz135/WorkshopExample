@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 #
 # some_module documentation build configuration file, created by
-# sphinx-quickstart on Mon Nov 27 17:20:38 2017.
+# sphinx-quickstart on Mon Nov 27 17:28:48 2017.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -79,7 +79,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = []
+exclude_patterns = ['_build']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
