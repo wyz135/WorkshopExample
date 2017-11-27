@@ -6,6 +6,7 @@ omit =
     examples/*
     tests/*
     *__init__*
+    setup.py
 
 exclude_lines =
     pragma: no cover

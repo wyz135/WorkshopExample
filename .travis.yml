@@ -8,7 +8,7 @@ python:
 install:
   - pip install .
   - pip install -r requirements.txt
-  - pip install pytest sphinx numpydoc codecov sphinx_rtd_theme
+  - pip install pytest pytest-cov sphinx numpydoc codecov sphinx_rtd_theme
 
 script:
   - pytest --cov=./
