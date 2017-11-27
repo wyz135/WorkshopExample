@@ -1,15 +1,21 @@
-.. some_module documentation master file, created by
-   sphinx-quickstart on Mon Nov 27 17:28:48 2017.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
 
 Welcome to some_module's documentation!
 =======================================
 
-Contents:
+I made this little project so people could easily fork, update the name and author,
+enable a few web hooks, and have a project which had well defined testing, documentation,
+code linting and more.
+
+Now I have added a file :code:`api.rst` to put the API in (ie the docstring from our code).
+I include it in the Sphinx build by simply adding it to the contents directly below.
+
+Contents
+--------
 
 .. toctree::
    :maxdepth: 2
+
+   api
 
 
 
