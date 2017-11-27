@@ -1,8 +1,8 @@
 ---
 exclude_paths:
-  - tests/
-  - examples/
-  - doc/
-  - build/
-  - dist/
+  - tests/**
+  - examples/**
+  - doc/**
+  - build/**
+  - dist/**
 
