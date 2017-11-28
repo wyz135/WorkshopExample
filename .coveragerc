@@ -5,6 +5,7 @@ omit =
     dist/*
     examples/*
     tests/*
+    data/*
     *__init__*
     setup.py
 

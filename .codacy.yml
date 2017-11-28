@@ -5,4 +5,5 @@ exclude_paths:
   - doc/**
   - build/**
   - dist/**
+  - data/**
 

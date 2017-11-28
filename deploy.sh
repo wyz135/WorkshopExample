@@ -27,5 +27,8 @@ if [ -n "$GITHUB_API_KEY" ]; then
         echo "Pushing"
         git push -f -q "https://${GITHUB_API_KEY}@${GH_REF}" master:gh-pages  > /dev/null 2>&1 && echo "Pushed"
     fi
+else
+    echo "GITHUB_API_KEY not found."
+    echo "Please set the GITHUB_API_KEY environment variable in travis to a Github personal access token with public_repo permission"
 fi
 echo "Deploy script ending"

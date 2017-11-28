@@ -8,6 +8,6 @@
  Also note that members without documentation (such as :code:`untested_subtract` do not appear in the doco).
 
  """
-from some_module.file1 import add_stuff, untested_subtract
+from some_module.example import add_stuff, untested_subtract
 
 __all__ = ['add_stuff', 'untested_subtract']

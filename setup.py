@@ -8,5 +8,5 @@ setup(name='WorkshopExample',
       author_email='samuelreay@gmail.com',
       license='MIT',
       install_requires=['numpy'],
-      packages=find_packages(exclude=('tests', 'doc'))
+      packages=find_packages(exclude=('tests', 'doc', 'data'))
       )
