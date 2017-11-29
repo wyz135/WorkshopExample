@@ -6,4 +6,4 @@ exclude_paths:
   - build/**
   - dist/**
   - data/**
-
+  - deploy.sh
