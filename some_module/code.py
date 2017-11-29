@@ -1,4 +1,5 @@
 # So here is some just amazing code. It is for making plots of various things from the 6dF survey
+# and calculating overdensity at particular coords
 import numpy as np
 
 f = open(r"C:\Users\shint1\PyCharmProjects\WorkshopExample\data\6df.csv", 'r')
@@ -28,7 +29,6 @@ mag_b = np.array(mag_b)
 mag_r = np.array(mag_r)
 print("Have %d entries" % len(ra))
 
-
 import matplotlib.pyplot as plt
 fig, axes = plt.subplots(2, 2, figsize=(7,7))
 axes[0, 0].scatter(z, mag_b, c=a_v, s=3, edgecolor='none', cmap='jet', alpha=0.5)
@@ -49,7 +49,6 @@ axes[0, 1].set_xlabel("z")
 axes[0, 1].set_ylabel("mag_b - mag_r")
 plt.tight_layout()
 plt.show()
-
 fig, axes = plt.subplots(2, 2, figsize=(7,7))
 mask = (z < 0.2) & (mag_b > 10)
 axes[0, 0].scatter(z[mask], mag_b[mask], c=a_v[mask], s=3, edgecolor='none', cmap='jet', alpha=0.5)
@@ -70,7 +69,31 @@ axes[0, 1].set_xlabel("z")
 axes[0, 1].set_ylabel("mag_b - mag_r")
 plt.tight_layout()
 plt.show()
-
-ras = np.linspace(ra.min(), ra.max(), 20)
-decs = np.linspace(dec.min(), dec.max(), 20)
+# calculate num points close to a ra/dec
+if False:
+    plt.scatter(ra, dec)
+    plt.show()
+radius = 1
+ra_sn = [50, 75, 175, 200, 205, 300]
+dec_sn = [-40, -60, -10, -30, -5, -70]
+nums = []
+for i in range(len(ra_sn)):
+    r, d = ra_sn[i], dec_sn[i]
+    dist = np.sqrt((ra - r)**2 + (dec - d)**2)
+    num = np.sum(dist < radius)
+    nums.append(num)
+rands = np.vstack((ra, dec)).T
+np.random.shuffle(rands)
+rands = rands[:500, :]
+print(rands.shape)
+vals = []
+for r, d in rands:
+    dist = np.sqrt((ra - r)**2 + (dec - d)**2)
+    vals.append(np.sum(dist < radius))
+mean = np.mean(vals)
+overdensity = (np.array(nums) / mean) - 1
+print("Overdensities:")
+print("%12s %12s %12s" % ("RA", "DEC", "delta"))
+for i in range(len(ra_sn)):
+    print("%12.4f %12.4f %12.4f" % (ra_sn[i], dec_sn[i], overdensity[i]))
 
