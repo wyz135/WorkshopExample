@@ -7,7 +7,7 @@ python:
 
 env:
     global:
-        - GH_REF: github.com/samreay/WorkshopExample.git
+        - GH_REF: github.com/wyz135/WorkshopExample.git
 
 install:
   - pip install .
